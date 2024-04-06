@@ -44,7 +44,7 @@
         android:layout_marginTop="30dp"
         android:background="@drawable/border"
         android:gravity="center"
-        android:text="මාලිමාව - Compass"
+        android:text="නිවැරදිව දිශාව සොයාගමු   Compass"
         android:textAlignment="center"
         android:textColor="@color/black"
         android:textSize="24dp"

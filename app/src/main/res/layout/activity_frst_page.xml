@@ -135,8 +135,8 @@
             android:id="@+id/imageView"
             android:layout_width="30dp"
             android:layout_height="30dp"
-            android:layout_marginTop="20dp"
-            android:layout_marginStart="30dp"
+            android:layout_marginTop="15dp"
+            android:layout_marginStart="10dp"
             app:srcCompat="@drawable/baseline_compass_calibration_24" />
 
 
@@ -151,7 +151,7 @@
             android:textSize="20dp"
             android:textStyle="bold"
             android:textColor="@color/black"
-            android:text="මාලිමාව - Compass" />
+            android:text="නිවැරදිව දිශාව සොයාගමු - Compass" />
 
 
     </FrameLayout>
