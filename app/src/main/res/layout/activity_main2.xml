@@ -1,0 +1,608 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/coverblr"
+    tools:context=".MainActivity2">
+
+
+    <FrameLayout
+        android:id="@+id/frameLayout"
+        android:layout_width="300dp"
+        android:layout_height="50dp"
+        android:background="@drawable/border"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="50dp"
+        app:layout_constraintHorizontal_bias="0.496"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.023">
+
+        <TextView
+            android:id="@+id/headTxt"
+            android:layout_width="273dp"
+            android:layout_height="37dp"
+            android:layout_gravity="center"
+            android:text="අවුරුදු නැකැත් 2024"
+            android:textAlignment="center"
+            android:textColor="@color/black"
+            android:textSize="27sp"
+            android:textStyle="bold" />
+
+
+    </FrameLayout>
+
+    <TextView
+        android:id="@+id/textView5"
+        android:layout_width="250dp"
+        android:layout_height="50dp"
+        android:layout_gravity="center_horizontal"
+        android:background="@drawable/nbox"
+        android:gravity="center"
+        android:layout_marginTop="90dp"
+        android:text="රාජ්‍ය ජෝතීෂ්‍යවේදීන්ගේ සංගමය \n නැකැත් කමිටුව"
+        android:textAlignment="center"
+        android:textColor="@color/black"
+        android:textSize="12dp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.559"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.096"
+        tools:ignore="MissingConstraints" />
+
+    <ScrollView
+        android:id="@+id/scrollView2"
+        android:layout_width="match_parent"
+        android:layout_height="600dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:orientation="vertical"
+            android:paddingBottom="50dp">
+
+            <FrameLayout
+                android:layout_width="380dp"
+                android:layout_height="560dp"
+                android:layout_gravity="center"
+                android:layout_marginTop="20dp"
+                android:layout_marginBottom="30dp"
+                android:background="@drawable/list_border"
+                android:padding="30dp">
+
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="60dp"
+                    android:padding="15dp"
+                    android:layout_gravity="center_horizontal"
+                    android:background="@drawable/nbox"
+                    android:gravity="center"
+                    android:text="අවුරුදු උදාව"
+                    android:textAlignment="center"
+                    android:textColor="@color/black"
+                    android:textSize="22dp"
+                    android:textStyle="bold" />
+
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/img1"
+                    android:layout_width="160dp"
+                    android:layout_height="160dp"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginTop="100dp"
+                    android:backgroundTint="@color/white"
+                    app:cardCornerRadius="25dp">
+
+                    <ImageView
+                        android:layout_width="160dp"
+                        android:layout_height="160dp"
+                        android:layout_gravity="center_horizontal"
+
+                        android:src="@drawable/image" />
+
+
+                </androidx.cardview.widget.CardView>
+
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/txt1"
+                    android:layout_width="match_parent"
+                    android:layout_height="85dp"
+                    android:padding="5dp"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginTop="290dp"
+                    android:backgroundTint="@color/white"
+                    app:cardCornerRadius="25dp">
+
+
+                    <TextView
+                        android:id="@+id/textn1"
+                        android:layout_width="match_parent"
+                        android:background="@color/time_box"
+                        android:layout_height="85dp"
+                        android:gravity="center"
+                        android:textAlignment="center"
+                        android:textColor="@color/black"
+                        android:textSize="20dp"
+                        android:textStyle="bold" />
+
+                </androidx.cardview.widget.CardView>
+
+
+
+
+                <TextView
+
+                    android:layout_width="match_parent"
+                    android:layout_height="100dp"
+                    android:layout_gravity="bottom"
+                    android:background="@drawable/nbox"
+                    android:gravity="center"
+                    android:text="අප්‍රේල් මස 13 වැනි ශනි දින අපරභාග 09.05 ට සිංහල අලුත් අවුරුද්ද උදාවෙයි."
+                    android:textAlignment="center"
+                    android:textColor="@color/black"
+                    android:textSize="16dp"
+                    android:padding="15dp"
+                    android:textStyle="bold"
+
+
+                    />
+
+
+            </FrameLayout>
+
+
+            <FrameLayout
+                android:layout_width="380dp"
+                android:layout_height="770dp"
+                android:layout_gravity="center"
+                android:layout_marginTop="20dp"
+                android:layout_marginBottom="30dp"
+                android:background="@drawable/list_border"
+                android:padding="30dp">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="60dp"
+                    android:padding="15dp"
+                    android:layout_gravity="center_horizontal"
+                    android:background="@drawable/nbox"
+                    android:gravity="center"
+                    android:text="පුණ්‍ය කාලය"
+                    android:textAlignment="center"
+                    android:textColor="@color/black"
+                    android:textSize="22dp"
+                    android:textStyle="bold" />
+
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="200dp"
+                    android:layout_height="120dp"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginTop="100dp"
+                    app:cardCornerRadius="25dp">
+
+                    <ImageView
+                        android:layout_width="200dp"
+                        android:layout_height="200dp"
+                        android:layout_gravity="center"
+                        android:src="@drawable/n2" />
+
+
+                </androidx.cardview.widget.CardView>
+
+
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/txt2"
+                    android:layout_width="match_parent"
+                    android:layout_height="85dp"
+                    android:padding="5dp"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginTop="240dp"
+                    android:backgroundTint="@color/white"
+                    app:cardCornerRadius="25dp">
+
+                    <TextView
+                        android:id="@+id/textn2"
+                        android:layout_width="match_parent"
+                        android:background="@color/time_box"
+                        android:layout_height="85dp"
+                        android:gravity="center"
+                        android:textAlignment="center"
+                        android:textColor="@color/black"
+                        android:textSize="20dp"
+                        android:textStyle="bold"
+                        tools:ignore="RtlCompat" />
+
+                </androidx.cardview.widget.CardView>
+
+
+
+                <TextView
+
+                    android:layout_width="match_parent"
+                    android:layout_height="350dp"
+                    android:layout_gravity="bottom"
+                    android:background="@drawable/nbox"
+                    android:gravity="center"
+                    android:text="අප්‍රේල් මස 13 වන සෙනසුරාදා අපරභාග 2.41 සිට 14 වන ඉර්දා අලුයම 3.29 දක්වා පුණ්‍ය කාලය බැවින් අප්‍රේල් මස 13 වන සෙනසුරාදා අපරභාග 2.41 ට පළමුව ආහාර පාන ගෙන සියලු වැඩ අත්හැර ආගමික වතාවත්වල යෙදීම ද, පුණ්‍ය කාලයේ අපර කොටස එනම් අප්‍රේල් මස 13 වන සෙනසුරාදා අපරභාග 9.05 සිට 14 වන ඉන්ද්‍රා අලුයම 3.29 දක්වා පහත දැක්වෙන අයුරින් ආහාර පිසීම, වැඩ ඇල්ලීම, ගනුදෙනු කිරීම හා ආහාර අනුභවය ආදී නැකත් චාර්තු විධි ඉටුකිරීම මැනවි."
+                    android:textAlignment="center"
+                    android:textColor="@color/black"
+                    android:textSize="16dp"
+                    android:padding="15dp"
+                    android:textStyle="bold" />
+
+
+            </FrameLayout>
+
+
+            <FrameLayout
+                android:layout_width="380dp"
+                android:layout_height="650dp"
+                android:layout_gravity="center"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="30dp"
+                android:background="@drawable/list_border"
+                android:padding="30dp">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="100dp"
+                    android:padding="15dp"
+                    android:layout_gravity="center_horizontal"
+                    android:background="@drawable/nbox"
+                    android:gravity="center"
+                    android:text="ලිප ගිනි මෙලවීම හා ආහාර පිසීම"
+                    android:textAlignment="center"
+                    android:textColor="@color/black"
+                    android:textSize="22dp"
+                    android:textStyle="bold" />
+
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="200dp"
+                    android:layout_height="120dp"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginTop="150dp"
+                    android:backgroundTint="@color/white"
+                    app:cardCornerRadius="25dp">
+
+                    <ImageView
+                        android:layout_width="200dp"
+                        android:layout_height="120dp"
+                        android:layout_gravity="center_horizontal"
+                        android:src="@drawable/n3" />
+
+
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/txt3"
+                    android:layout_width="match_parent"
+                    android:layout_height="85dp"
+                    android:padding="5dp"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginTop="300dp"
+                    android:backgroundTint="@color/white"
+                    app:cardCornerRadius="25dp">
+
+                    <TextView
+                        android:id="@+id/textn3"
+                        android:layout_width="match_parent"
+                        android:background="@color/time_box"
+                        android:gravity="center"
+                        android:layout_height="85dp"
+                        android:textAlignment="center"
+                        android:textColor="@color/black"
+                        android:textSize="20dp"
+                        android:textStyle="bold"
+                        tools:ignore="RtlCompat" />
+
+                </androidx.cardview.widget.CardView>
+
+
+
+
+
+                <TextView
+
+                    android:layout_width="match_parent"
+                    android:layout_height="180dp"
+                    android:padding="15dp"
+                    android:layout_gravity="bottom"
+                    android:background="@drawable/nbox"
+                    android:gravity="center"
+                    android:text="අප්‍රේල් මස 13 වන සෙනසුරාදා රාත්‍රී 11.06 ට නීල වර්ණ වස්ත්‍රාභරණයෙන් සැරසී දකුණු දිශාව බලා ලිප් බැඳ ගිනි මොළවා තල උක් හකුරු මිශ්‍ර කිරි බතක් ද තල මිශ්‍ර කැවිලි වර්ගයක් ද පිළියෙල කරගැනීම මැනවි."
+                    android:textAlignment="center"
+                    android:textColor="@color/black"
+                    android:textSize="16dp"
+                    android:textStyle="bold"
+
+
+                    />
+
+
+            </FrameLayout>
+
+
+            <FrameLayout
+                android:layout_width="380dp"
+                android:layout_height="680dp"
+                android:layout_gravity="center"
+                android:layout_marginTop="20dp"
+                android:layout_marginBottom="30dp"
+                android:background="@drawable/list_border"
+                android:padding="30dp">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="100dp"
+                    android:padding="15dp"
+                    android:background="@drawable/nbox"
+                    android:gravity="center"
+                    android:layout_gravity="center_horizontal"
+                    android:text="වැඩ ඇල්ලීම , ගණුදෙනු කිරීම හා ආහාර අනුභවය"
+                    android:textAlignment="center"
+                    android:textColor="@color/black"
+                    android:textSize="22dp"
+                    android:textStyle="bold" />
+
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="160dp"
+                    android:layout_height="150dp"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginTop="150dp"
+                    app:cardCornerRadius="25dp">
+
+                    <ImageView
+                        android:layout_width="250dp"
+                        android:layout_height="180dp"
+                        android:layout_gravity="center"
+                        android:src="@drawable/n4" />
+
+
+                </androidx.cardview.widget.CardView>
+
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/txt4"
+                    android:layout_width="match_parent"
+                    android:layout_height="85dp"
+                    android:padding="5dp"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginTop="330dp"
+                    android:backgroundTint="@color/white"
+                    app:cardCornerRadius="25dp">
+
+                    <TextView
+                        android:id="@+id/textn4"
+                        android:layout_width="match_parent"
+                        android:background="@color/time_box"
+                        android:layout_height="85dp"
+                        android:gravity="center"
+                        android:textAlignment="center"
+                        android:textColor="@color/black"
+                        android:textSize="20dp"
+                        android:textStyle="bold"
+                        tools:ignore="RtlCompat" />
+
+                </androidx.cardview.widget.CardView>
+
+
+
+
+
+                <TextView
+
+                    android:layout_width="match_parent"
+                    android:layout_height="180dp"
+                    android:padding="15dp"
+                    android:layout_gravity="bottom"
+                    android:background="@drawable/nbox"
+                    android:gravity="center"
+                    android:text="අප්‍රේල් මස 13 වන සෙනසුරාදා මධ්‍යම රාත්‍රී 12.06 ට හෙවත් අප්‍රියෙල් 14 ඉරිදාට එළිවන පාන්දර 00.06 ට නීල වර්ණ වස්ත්‍රාභරණයෙන් සැරසී දකුණු දිශාව බලා සියලු වැඩ අල්ලා ගනුදෙනු කොට ආහාර අනුභව කිරීම මැනවි."
+                    android:textAlignment="center"
+                    android:textColor="@color/black"
+                    android:textSize="16dp"
+                    android:textStyle="bold"
+
+
+                    />
+
+
+
+            </FrameLayout>
+
+
+            <FrameLayout
+                android:layout_width="380dp"
+                android:layout_height="650dp"
+                android:layout_gravity="center"
+                android:layout_marginTop="20dp"
+                android:layout_marginBottom="30dp"
+                android:background="@drawable/list_border"
+                android:padding="30dp">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="60dp"
+                    android:gravity="center"
+                    android:background="@drawable/nbox"
+                    android:padding="15dp"
+                    android:layout_gravity="center_horizontal"
+                    android:text="හිසතෙල් ගෑම"
+                    android:textAlignment="center"
+                    android:textColor="@color/black"
+                    android:textSize="22dp"
+                    android:textStyle="bold" />
+
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="160dp"
+                    android:layout_height="160dp"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginTop="100dp"
+                    android:backgroundTint="@color/white"
+                    app:cardCornerRadius="25dp">
+
+                    <ImageView
+                        android:layout_width="250dp"
+                        android:layout_height="150dp"
+                        android:layout_gravity="center"
+                        android:src="@drawable/n5" />
+
+
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/txt5"
+                    android:layout_width="match_parent"
+                    android:layout_height="85dp"
+                    android:padding="5dp"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginTop="300dp"
+                    android:backgroundTint="@color/white"
+                    app:cardCornerRadius="25dp">
+
+                    <TextView
+                        android:id="@+id/textn5"
+                        android:layout_width="match_parent"
+                        android:layout_height="85dp"
+                        android:gravity="center"
+                        android:background="@color/time_box"
+                        android:textAlignment="center"
+                        android:textColor="@color/black"
+                        android:textSize="20dp"
+                        android:textStyle="bold"
+                        tools:ignore="RtlCompat" />
+
+
+
+                </androidx.cardview.widget.CardView>
+
+
+
+
+                <TextView
+
+                    android:layout_width="match_parent"
+                    android:layout_height="180dp"
+                    android:padding="15dp"
+                    android:layout_gravity="bottom"
+                    android:background="@drawable/nbox"
+                    android:gravity="center"
+                    android:text="අප්‍රේල් මස 15 වන සඳුදා පූර්වභාග 10.17 ට ශ්වේත වර්ණ හෙවත් සුදු පැහැති වස්ත්‍රාභරණයෙන් සැරසී දකුණු දිශාව බලා හිසට දිවුල්පත් ද පයට ඉඹුල්පත් ද තබා දිවුල්පත් යුෂ මිශ්‍ර නානු හා තෙල් ගා ස්නානය කිරීම මැනවි."
+                    android:textAlignment="center"
+                    android:textColor="@color/black"
+                    android:textSize="16dp"
+                    android:textStyle="bold" />
+
+
+
+            </FrameLayout>
+
+
+            <FrameLayout
+                android:layout_width="380dp"
+                android:layout_height="680dp"
+                android:layout_gravity="center"
+                android:layout_marginTop="20dp"
+                android:layout_marginBottom="30dp"
+                android:background="@drawable/list_border"
+                android:padding="30dp">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="100dp"
+                    android:gravity="center"
+                    android:padding="15dp"
+                    android:background="@drawable/nbox"
+                    android:layout_gravity="center_horizontal"
+                    android:text="රැකී රක්ෂා සඳහා පිටත්ව යාම"
+                    android:textAlignment="center"
+                    android:textColor="@color/black"
+                    android:textSize="22dp"
+                    android:textStyle="bold" />
+
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="160dp"
+                    android:layout_height="160dp"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginTop="150dp"
+                    android:backgroundTint="@color/white"
+                    app:cardCornerRadius="25dp">
+
+                    <ImageView
+                        android:layout_width="260dp"
+                        android:layout_height="220dp"
+                        android:layout_gravity="center"
+                        android:src="@drawable/n6" />
+
+
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/txt6"
+                    android:layout_width="match_parent"
+                    android:layout_height="85dp"
+                    android:padding="5dp"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginTop="330dp"
+                    android:backgroundTint="@color/white"
+                    app:cardCornerRadius="25dp">
+
+                    <TextView
+                        android:id="@+id/textn6"
+                        android:layout_width="match_parent"
+                        android:layout_height="85dp"
+                        android:background="@color/time_box"
+                        android:gravity="center"
+                        android:textColor="@color/black"
+                        android:textSize="20dp"
+                        android:textStyle="bold"
+                        tools:ignore="RtlCompat" />
+
+
+
+                </androidx.cardview.widget.CardView>
+
+
+
+
+
+                <TextView
+
+                    android:layout_width="match_parent"
+                    android:layout_height="180dp"
+                    android:padding="15dp"
+                    android:layout_gravity="bottom"
+                    android:background="@drawable/nbox"
+                    android:gravity="center"
+                    android:text="අප්‍රේල් මස 17 වන බදාදා පූර්වභාග 6.52 ට කොල පැහැති වස්ත්‍රාභරණයෙන් සැරසී ගිතෙල් සහ හකුරු මිශ්‍ර කිරිබතක් හා කැවිලි වර්ගයක් අනුභව කර උතුරු දිශාව බලා පිටත්ව යෑම මැනවි."
+                    android:textAlignment="center"
+                    android:textColor="@color/black"
+                    android:textSize="16dp"
+                    android:textStyle="bold" />
+
+            </FrameLayout>
+
+
+        </LinearLayout>
+
+    </ScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

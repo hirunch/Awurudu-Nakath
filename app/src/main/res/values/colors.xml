@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="border_color">#807C7C</color>
+    <color name="border_bg">#A3FFFFFF</color>
+    <color name="my_dark_primary">#000C1E</color>
+    <color name="transp">#00FFFFFF</color>
+    <color name="low_white">#B3FFFFFF</color>
+    <color name="nbox_bg">#3BFFEB3B</color>
+    <color name="time_box">#80FF9800</color>
+</resources>
