@@ -9,4 +9,4 @@ Awuru Nakath Android Mobile Application
 
 ## Screen Recording
 
-[Video](https://github.com/user-attachments/assets/6ec76b36-c84b-4ac7-9e1d-29f06c0af596)
+[Video](https://github.com/user-attachments/assets/925f15f1-0bac-4be6-b9fa-d5d29bd16ed2)
