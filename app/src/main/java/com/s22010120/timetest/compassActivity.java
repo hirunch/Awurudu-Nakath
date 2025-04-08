@@ -76,6 +76,12 @@ public class compassActivity extends AppCompatActivity {
 
         adView.loadAd(adRequest);
 
+        AdView adView1 = (AdView)findViewById(R.id.adView5);
+        AdRequest adRequest1 = new AdRequest.Builder()
+                .build();
+
+        adView1.loadAd(adRequest1);
+
 
 
 

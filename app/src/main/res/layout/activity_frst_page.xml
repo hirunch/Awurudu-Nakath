@@ -51,14 +51,15 @@
         app:layout_constraintVertical_bias="0.049" />
 
     <ScrollView
+        android:id="@+id/scrollView3"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:layout_marginTop="170dp"
+        android:fillViewport="true"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        android:layout_marginTop="170dp"
-        android:fillViewport="true"
         tools:ignore="MissingConstraints">
 
         <LinearLayout
@@ -121,8 +122,8 @@
                             android:id="@+id/txt2"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_marginTop="30dp"
                             android:layout_gravity="center_horizontal"
+                            android:layout_marginTop="30dp"
                             android:backgroundTint="@color/white"
                             android:padding="2dp"
                             app:cardCornerRadius="25dp">
@@ -207,8 +208,8 @@
                             android:id="@+id/txt1"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_marginTop="30dp"
                             android:layout_gravity="center_horizontal"
+                            android:layout_marginTop="30dp"
                             android:backgroundTint="@color/white"
                             android:padding="2dp"
                             app:cardCornerRadius="25dp">
@@ -296,8 +297,8 @@
                             android:id="@+id/txt3"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_marginTop="30dp"
                             android:layout_gravity="center_horizontal"
+                            android:layout_marginTop="30dp"
                             android:backgroundTint="@color/white"
                             android:padding="2dp"
                             app:cardCornerRadius="25dp">
@@ -380,8 +381,8 @@
                             android:id="@+id/txt4"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_marginTop="30dp"
                             android:layout_gravity="center_horizontal"
+                            android:layout_marginTop="30dp"
                             android:backgroundTint="@color/white"
                             android:padding="2dp"
                             app:cardCornerRadius="25dp">
@@ -465,8 +466,8 @@
                             android:id="@+id/txt5"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_marginTop="30dp"
                             android:layout_gravity="center_horizontal"
+                            android:layout_marginTop="30dp"
                             android:backgroundTint="@color/white"
                             android:padding="2dp"
                             app:cardCornerRadius="25dp">
@@ -552,8 +553,8 @@
                             android:id="@+id/txt6"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_marginTop="30dp"
                             android:layout_gravity="center_horizontal"
+                            android:layout_marginTop="30dp"
                             android:backgroundTint="@color/white"
                             android:padding="2dp"
                             app:cardCornerRadius="25dp">
@@ -595,7 +596,8 @@
                 android:layout_width="350dp"
                 android:layout_height="70dp"
                 android:layout_gravity="center"
-                android:layout_marginTop="50dp"
+                android:layout_marginTop="30dp"
+                android:layout_marginBottom="50dp"
                 android:background="@drawable/list_border"
                 tools:ignore="MissingConstraints">
 
@@ -624,17 +626,6 @@
 
             </FrameLayout>
 
-
-            <com.google.android.gms.ads.AdView
-                android:id="@+id/adView3"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:layout_marginBottom="20dp"
-                ads:adSize="BANNER"
-                ads:adUnitId="ca-app-pub-9783849108384584/9474894050"
-                tools:ignore="MissingConstraints" />
-
             <TextView
                 android:id="@+id/textView6"
                 android:layout_width="150dp"
@@ -647,6 +638,18 @@
                 android:textStyle="bold|italic" />
         </LinearLayout>
     </ScrollView>
+
+    <com.google.android.gms.ads.AdView
+        android:id="@+id/adView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        ads:adSize="BANNER"
+        ads:adUnitId="ca-app-pub-9783849108384584/9474894050"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:ignore="MissingConstraints" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

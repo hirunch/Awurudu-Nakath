@@ -11,32 +11,28 @@
 
     <androidx.cardview.widget.CardView
         android:id="@+id/cardView"
-        android:layout_width="330dp"
-        android:layout_height="330dp"
+        android:layout_width="220dp"
+        android:layout_height="220dp"
         android:background="@color/white"
-        android:backgroundTint="@color/white"
+        android:backgroundTint="@color/green1"
         app:cardCornerRadius="35dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.493"
+        app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.593"
+        app:layout_constraintVertical_bias="0.544"
         tools:ignore="MissingConstraints">
+
 
         <ImageView
             android:id="@+id/compassImage"
-            android:layout_width="280dp"
-            android:layout_height="280dp"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
             android:layout_gravity="center"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
             app:srcCompat="@drawable/compass" />
-
-
     </androidx.cardview.widget.CardView>
+
 
     <TextView
         android:id="@+id/textView7"
@@ -45,7 +41,7 @@
         android:layout_marginTop="30dp"
         android:background="@drawable/border"
         android:gravity="center"
-        android:text="නිවැරදිව දිශාව සොයාගමු   Compass"
+        android:text="මාලිමාව - Compass"
         android:textAlignment="center"
         android:textColor="@color/black"
         android:textSize="24dp"
@@ -55,7 +51,7 @@
         app:layout_constraintHorizontal_bias="0.495"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.06" />
+        app:layout_constraintVertical_bias="0.025" />
 
     <ImageView
         android:id="@+id/imageView2"
@@ -66,38 +62,52 @@
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.264"
+        app:layout_constraintVertical_bias="0.315"
         app:srcCompat="@drawable/north" />
-
-
 
     <com.google.android.gms.ads.AdView
         android:id="@+id/adView4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="48dp"
+        ads:adSize="BANNER"
+        ads:adUnitId="ca-app-pub-9783849108384584/9474894050"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.494"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:ignore="MissingConstraints" />
+
+    <com.google.android.gms.ads.AdView
+        android:id="@+id/adView5"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         ads:adSize="BANNER"
         ads:adUnitId="ca-app-pub-9783849108384584/9474894050"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.494"
         app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.204"
         tools:ignore="MissingConstraints" />
 
     <Button
         android:id="@+id/buttonads"
         android:layout_width="200dp"
         android:layout_height="60dp"
-        android:text="Support Us"
-        android:textStyle="bold"
-        android:textAlignment="center"
-        android:onClick="adView"
-        android:textColor="@color/black"
         android:backgroundTint="@color/time_box"
+        android:onClick="adView"
+        android:text="Support Us"
+        android:textAlignment="center"
+        android:textColor="@color/black"
+        android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.892" />
+        app:layout_constraintVertical_bias="0.825" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
