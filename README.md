@@ -2,10 +2,10 @@ Awuru Nakath Android Mobile Application
 
 ## Java Android Mobile App Project
 
-<img alt="image" height="400" src="https://github.com/user-attachments/assets/a0a0759d-bae1-4fa3-ba67-f9ff908b638f" width="200"/>
-<img alt="image" height="400" src="https://github.com/user-attachments/assets/2dafc624-c342-43a2-ae4c-93ef4429e550" width="200"/>
-<img alt="image" height="400" src="https://github.com/user-attachments/assets/15f4a65e-b7c0-472a-a43e-4d4fb6d39c40" width="200"/>
-<img alt="image" height="400" src="https://github.com/user-attachments/assets/e36d090c-ecef-4ecc-9434-145bda690280" width="200"/>
+<img alt="image" height="400" src="https://github.com/user-attachments/assets/46d796f4-ff74-4635-87a4-02acffd391c3" width="200"/>
+<img alt="image" height="400" src="https://github.com/user-attachments/assets/406e6809-a52a-4e12-8eb2-e77c5a3ef556" width="200"/>
+<img alt="image" height="400" src="https://github.com/user-attachments/assets/88809fbd-d0ae-4eaf-963c-8d947cf69768" width="200"/>
+<img alt="image" height="400" src="https://github.com/user-attachments/assets/a98cd577-8b5a-4299-87a9-dc7cafe83d80" width="200"/>
 
 ## Screen Recording
 
