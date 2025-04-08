@@ -3,14 +3,15 @@ package com.s22010120.timetest;
 import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.os.CountDownTimer;
+import android.widget.FrameLayout;
 import android.widget.TextView;
-
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.graphics.Insets;
-import androidx.core.view.ViewCompat;
-import androidx.core.view.WindowInsetsCompat;
-
+import com.google.android.gms.ads.AdRequest;
+import com.google.android.gms.ads.AdView;
+import com.google.android.gms.ads.MobileAds;
+import com.google.android.gms.ads.initialization.InitializationStatus;
+import com.google.android.gms.ads.initialization.OnInitializationCompleteListener;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.Locale;
@@ -33,15 +34,16 @@ public class MainActivity2 extends AppCompatActivity {
     private CountDownTimer countDownTimer5;
     private CountDownTimer countDownTimer6;
 
+
     private SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss", Locale.getDefault());
 
 
-    private String nakathOne = "2024-04-13 21:05:00";
-    private String nakathTwo = "2024-04-13 14:41:00";
-    private String nakathThree = "2024-04-13 23:06:00";
-    private String nakathFour = "2024-04-14 00:06:00";
-    private String nakathFive = "2024-04-15 10:17:00";
-    private String nakathSix = "2024-04-17 06:52:00";
+    private String nakathOne = "2025-04-14 03:21:00";
+    private String nakathTwo = "2025-04-13 20:57:00";
+    private String nakathThree = "2025-04-14 04:04:00";
+    private String nakathFour = "2025-04-14 06:44:00";
+    private String nakathFive = "2025-04-16 09:04:00";
+    private String nakathSix = "2025-04-17 09:03:00";
 
 
     @Override
@@ -50,11 +52,26 @@ public class MainActivity2 extends AppCompatActivity {
         EdgeToEdge.enable(this);
         setContentView(R.layout.activity_main2);
 
-        mediaPlayer = MediaPlayer.create(this, R.raw.song1);
+        MobileAds.initialize(this, new OnInitializationCompleteListener() {
+            @Override
+            public void onInitializationComplete(InitializationStatus initializationStatus) {
+            }
+        });
+
+        AdView adView = (AdView)findViewById(R.id.adView2);
+        AdRequest adRequest = new AdRequest.Builder()
+                .build();
+
+        adView.loadAd(adRequest);
+
+        AdView adView2 = (AdView)findViewById(R.id.adView3);
+        AdRequest adrequest2 = new AdRequest.Builder()
+                .build();
+        adView2.loadAd(adrequest2);
+
+        mediaPlayer = MediaPlayer.create(this, R.raw.song2);
         mediaPlayer.setLooping(true);
         mediaPlayer.start();
-
-
 
 
         n2Countdown1 = findViewById(R.id.textn1);
@@ -110,6 +127,8 @@ public class MainActivity2 extends AppCompatActivity {
             @Override
             public void onFinish() {
                 n2Countdown1.setText("සුභ අලුත් අවුරුද්දක් වේවා!");
+
+
             }
         }.start();
     }
@@ -201,8 +220,16 @@ public class MainActivity2 extends AppCompatActivity {
         long minutes = TimeUnit.MILLISECONDS.toMinutes(millisUntilFinished) % 60;
         long seconds = TimeUnit.MILLISECONDS.toSeconds(millisUntilFinished) % 60;
 
-        return String.format(Locale.getDefault(), "තව දින: %02d \n පැය %02d: මිනිත්තු %02d: තත්පර %02d",
-                days, hours, minutes, seconds);
+        if (days == 0 && hours == 0 && minutes == 0) {
+            return String.format(Locale.getDefault(), "තත්පර %02d", seconds);
+        } else if (days == 0 && hours == 0) {
+            return String.format(Locale.getDefault(), "මිනිත්තු %02d: තත්පර %02d", minutes, seconds);
+        } else if (days == 0) {
+            return String.format(Locale.getDefault(), "පැය %02d: මිනිත්තු %02d: තත්පර %02d", hours, minutes, seconds);
+        } else {
+            return String.format(Locale.getDefault(), "දින: %02d \nපැය %02d: මිනිත්තු %02d: තත්පර %02d",
+                    days, hours, minutes, seconds);
+        }
     }
 
 
