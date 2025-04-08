@@ -69,7 +69,7 @@ public class MainActivity2 extends AppCompatActivity {
                 .build();
         adView2.loadAd(adrequest2);
 
-        mediaPlayer = MediaPlayer.create(this, R.raw.song2);
+        mediaPlayer = MediaPlayer.create(this, R.raw.song1);
         mediaPlayer.setLooping(true);
         mediaPlayer.start();
 
