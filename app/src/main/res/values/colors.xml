@@ -9,4 +9,6 @@
     <color name="low_white">#B3FFFFFF</color>
     <color name="nbox_bg">#3BFFEB3B</color>
     <color name="time_box">#80FF9800</color>
+    <color name="yellow">#FFF493</color>
+    <color name="green1">#64D26F</color>
 </resources>

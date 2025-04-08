@@ -3,173 +3,650 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/main"
+    xmlns:ads="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/coverblr"
     tools:context=".FrstPageActivity">
 
-
-    <TextView
-        android:id="@+id/textView"
-        android:layout_width="350dp"
-        android:layout_height="100dp"
-        android:text="අලුත් අවුරුදු නැකැත්"
-        android:gravity="center"
-        android:textStyle="bold"
-        android:textAlignment="center"
-        android:padding="15dp"
-        android:textSize="27dp"
-        android:textColor="@color/black"
-        android:background="@drawable/border"
+    <androidx.cardview.widget.CardView
+        android:id="@+id/img"
+        android:layout_width="90dp"
+        android:layout_height="90dp"
+        android:layout_gravity="center_horizontal"
+        android:backgroundTint="@color/white"
+        app:cardCornerRadius="20dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintHorizontal_bias="0.051"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.096" />
-
-
-    <FrameLayout
-        android:id="@+id/nakathList1"
-        android:layout_width="350dp"
-        android:layout_height="180dp"
-        android:background="@drawable/list_border"
-        android:padding="15dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.491"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.377"
+        app:layout_constraintVertical_bias="0.049"
         tools:ignore="MissingConstraints">
-
-
-        <TextView
-            android:id="@+id/textView2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center_horizontal"
-            android:text="අලුත් අවුරුදු නැකැත් 2024 (සංශෝධිත)"
-            android:textAlignment="center"
-            android:textColor="@color/black"
-            android:textSize="22dp"
-            android:textStyle="bold" />
-
-        <TextView
-            android:id="@+id/textView4"
-            android:layout_width="250dp"
-            android:layout_height="50dp"
-            android:layout_gravity="center_horizontal"
-            android:layout_marginTop="100dp"
-            android:background="@drawable/nbox"
-            android:gravity="center"
-            android:text="ජාතික ජෝතීෂ්‍යවේදීන්ගේ සංගමය \n නැකැත් කමිටුව"
-            android:textAlignment="center"
-            android:textColor="@color/black"
-            android:textSize="12dp"
-            android:textStyle="bold" />
-
-
-    </FrameLayout>
-
-
-    <FrameLayout
-        android:id="@+id/nakathList2"
-        android:layout_width="350dp"
-        android:layout_height="180dp"
-        android:background="@drawable/list_border"
-        android:padding="15dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.491"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.731"
-        tools:ignore="MissingConstraints">
-
-
-        <TextView
-            android:id="@+id/textView3"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center_horizontal"
-            android:text="අලුත් අවුරුදු නැකැත් 2024"
-            android:textAlignment="center"
-            android:textColor="@color/black"
-            android:textSize="22dp"
-            android:textStyle="bold" />
-
-
-        <TextView
-            android:id="@+id/textView5"
-            android:layout_width="250dp"
-            android:layout_height="50dp"
-            android:layout_gravity="center_horizontal"
-            android:layout_marginTop="80dp"
-            android:background="@drawable/nbox"
-            android:gravity="center"
-            android:text="රාජ්‍ය ජෝතීෂ්‍යවේදීන්ගේ සංගමය \n නැකැත් කමිටුව"
-            android:textAlignment="center"
-            android:textColor="@color/black"
-            android:textSize="12dp"
-            android:textStyle="bold" />
-    </FrameLayout>
-
-
-
-    <FrameLayout
-        android:id="@+id/compassBtn"
-        android:layout_width="350dp"
-        android:layout_height="70dp"
-        android:background="@drawable/list_border"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.491"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.916"
-        tools:ignore="MissingConstraints">
-
 
         <ImageView
-            android:id="@+id/imageView"
-            android:layout_width="30dp"
-            android:layout_height="30dp"
-            android:layout_marginTop="15dp"
-            android:layout_marginStart="10dp"
-            app:srcCompat="@drawable/baseline_compass_calibration_24" />
-
-
-
-        <TextView
-            android:id="@+id/textView8"
-            android:layout_width="250dp"
-            android:layout_height="wrap_content"
-            android:textAlignment="center"
-            android:gravity="center"
-            android:layout_gravity="center"
-            android:textSize="20dp"
-            android:textStyle="bold"
-            android:textColor="@color/black"
-            android:text="නිවැරදිව දිශාව සොයාගමු - Compass" />
-
-
-    </FrameLayout>
+            android:id="@+id/rotatedSun"
+            android:layout_width="90dp"
+            android:layout_height="90dp"
+            android:layout_gravity="center_horizontal"/>
+    </androidx.cardview.widget.CardView>
 
     <TextView
-        android:id="@+id/textView6"
-        android:layout_width="150dp"
+        android:id="@+id/nakathView"
+        android:layout_width="263dp"
+        android:layout_height="90dp"
+        android:background="@drawable/border"
+        android:gravity="center"
+        android:padding="12dp"
+        android:text="අලුත් අවුරුදු නැකැත්"
         android:textAlignment="center"
         android:textColor="@color/black"
-        android:layout_height="wrap_content"
-        android:fontFamily="@font/andika_new_basic"
-        android:text="From CHAMIX™"
+        android:textSize="20dp"
         android:textStyle="bold|italic"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.891"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.977" />
+        app:layout_constraintVertical_bias="0.049" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginTop="170dp"
+        android:fillViewport="true"
+        tools:ignore="MissingConstraints">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="15.5dp"
+                android:layout_marginRight="15.5dp"
+                android:orientation="horizontal">
+
+
+                <FrameLayout
+                    android:id="@+id/framenOne"
+                    android:layout_width="380dp"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="0dp"
+                    android:background="@drawable/list_border"
+                    android:padding="30dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/nbox"
+                            android:padding="10dp"
+                            android:text="පුණ්‍ය කාලය"
+                            android:textAlignment="center"
+                            android:textColor="@color/black"
+                            android:textSize="22dp"
+                            android:textStyle="bold" />
+
+
+                        <androidx.cardview.widget.CardView
+                            android:layout_width="180dp"
+                            android:layout_height="140dp"
+                            android:layout_gravity="center_horizontal"
+                            android:layout_marginTop="30dp"
+                            app:cardCornerRadius="25dp">
+
+                            <ImageView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:src="@drawable/n2" />
+
+
+                        </androidx.cardview.widget.CardView>
+
+
+                        <androidx.cardview.widget.CardView
+                            android:id="@+id/txt2"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="30dp"
+                            android:layout_gravity="center_horizontal"
+                            android:backgroundTint="@color/white"
+                            android:padding="2dp"
+                            app:cardCornerRadius="25dp">
+
+                            <TextView
+                                android:id="@+id/nakathOne"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:background="@color/time_box"
+                                android:gravity="center"
+                                android:padding="10dp"
+                                android:textAlignment="center"
+                                android:textColor="@color/black"
+                                android:textSize="20dp"
+                                android:textStyle="bold" />
+
+                        </androidx.cardview.widget.CardView>
+
+
+                        <TextView
+
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="30dp"
+                            android:background="@drawable/nbox"
+                            android:padding="15dp"
+                            android:text="අප්‍රේල් මස 13 වැනි ඉරිදා අපරභාග 08.57 සිට පසුදින එනම් 14 වැනි සඳුදා පූර්වභාග 09.45 දක්වා පුණ්‍ය කාලය බැවින් අපේල් මස් 13 ඉරිදා අපරභාග 08.57 ට පළමුව ආහාර පාන ගෙන සියලු වැඩ අත්හැර ආගමික වතාවත්වල යෙදීම ද, පුණ්‍ය කාලයේ අපරභාග කොටස එනම් අප්‍රේල් මස 14 වැනි සඳුදා පූර්වභාග 03.21 සිට 14 වැනි සඳුදා පූර්වභාග 09.45 දක්වා පහත දැක්වෙන අයුරින් ආහාර පිසීම,වැඩ ඇල්ලීම,ගනුදෙනු කිරීම හා ආහාර අනුභවය ආදී නැකත් චාරිත්‍ර විධි ඉටු කිරීම මැනවි."
+                            android:textAlignment="center"
+                            android:textColor="@color/black"
+                            android:textSize="16dp"
+                            android:textStyle="bold" />
+
+
+                    </LinearLayout>
+                </FrameLayout>
+
+                <FrameLayout
+                    android:id="@+id/framenTwo"
+                    android:layout_width="380dp"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="0dp"
+                    android:background="@drawable/list_border"
+                    android:padding="30dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/nbox"
+                            android:padding="10dp"
+                            android:text="අවුරුදු උදාව"
+                            android:textAlignment="center"
+                            android:textColor="@color/black"
+                            android:textSize="22dp"
+                            android:textStyle="bold" />
+
+
+                        <androidx.cardview.widget.CardView
+                            android:id="@+id/img1"
+                            android:layout_width="160dp"
+                            android:layout_height="160dp"
+                            android:layout_gravity="center_horizontal"
+                            android:layout_marginTop="20dp"
+                            android:backgroundTint="@color/white"
+                            app:cardCornerRadius="25dp">
+
+                            <ImageView
+                                android:layout_width="160dp"
+                                android:layout_height="160dp"
+                                android:layout_gravity="center_horizontal"
+                                android:src="@drawable/image" />
+
+
+                        </androidx.cardview.widget.CardView>
+
+
+                        <androidx.cardview.widget.CardView
+                            android:id="@+id/txt1"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="30dp"
+                            android:layout_gravity="center_horizontal"
+                            android:backgroundTint="@color/white"
+                            android:padding="2dp"
+                            app:cardCornerRadius="25dp">
+
+
+                            <TextView
+                                android:id="@+id/nakathTwo"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:background="@color/time_box"
+                                android:gravity="center"
+                                android:padding="10dp"
+                                android:textAlignment="center"
+                                android:textColor="@color/black"
+                                android:textSize="20dp"
+                                android:textStyle="bold" />
+
+                        </androidx.cardview.widget.CardView>
+
+
+                        <TextView
+
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_marginTop="30dp"
+                            android:background="@drawable/nbox"
+                            android:gravity="center"
+                            android:padding="10dp"
+                            android:text="අප්‍රේල් මස 14 වැනි සඳුදා දින පූර්වභාග 03.21 ට සිංහල අලුත් අවුරුද්ද උදාවෙයි"
+                            android:textAlignment="center"
+                            android:textColor="@color/black"
+                            android:textSize="16dp"
+                            android:textStyle="bold" />
+
+
+                    </LinearLayout>
+
+
+                </FrameLayout>
+
+
+                <FrameLayout
+                    android:id="@+id/framenThree"
+                    android:layout_width="380dp"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="0dp"
+                    android:background="@drawable/list_border"
+                    android:padding="30dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/nbox"
+                            android:padding="10dp"
+                            android:text="ලිප ගිනි මෙලවීම හා ආහාර පිසීම"
+                            android:textAlignment="center"
+                            android:textColor="@color/black"
+                            android:textSize="22dp"
+                            android:textStyle="bold" />
+
+
+                        <androidx.cardview.widget.CardView
+                            android:layout_width="200dp"
+                            android:layout_height="120dp"
+                            android:layout_gravity="center_horizontal"
+                            android:layout_marginTop="30dp"
+                            android:backgroundTint="@color/white"
+                            app:cardCornerRadius="25dp">
+
+                            <ImageView
+                                android:layout_width="200dp"
+                                android:layout_height="match_parent"
+                                android:layout_gravity="center_horizontal"
+                                android:src="@drawable/n3" />
+
+
+                        </androidx.cardview.widget.CardView>
+
+                        <androidx.cardview.widget.CardView
+                            android:id="@+id/txt3"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="30dp"
+                            android:layout_gravity="center_horizontal"
+                            android:backgroundTint="@color/white"
+                            android:padding="2dp"
+                            app:cardCornerRadius="25dp">
+
+                            <TextView
+                                android:id="@+id/nakathThree"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:background="@color/time_box"
+                                android:padding="10dp"
+                                android:textAlignment="center"
+                                android:textColor="@color/black"
+                                android:textSize="20dp"
+                                android:textStyle="bold" />
+
+                        </androidx.cardview.widget.CardView>
+
+
+                        <TextView
+
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="30dp"
+                            android:background="@drawable/nbox"
+                            android:padding="15dp"
+                            android:text="අප්‍රේල් මස 14 වැනි සඳුදා පූර්වභාග 04.04 ට තඹ වර්ණ වස්ත්‍රාභරණයෙන් සැරසී දකුණු දිශාව බලා ළිප් බැඳ ගිනි මොළවා කිරිබතක්ද කැවිලි වර්ගයක්ද දී කිරි සහ විලඳ ද පිළියෙල කර ගැනීම මැනවි."
+                            android:textAlignment="center"
+                            android:textColor="@color/black"
+                            android:textSize="16dp"
+                            android:textStyle="bold" />
+
+                    </LinearLayout>
+
+
+                </FrameLayout>
+
+
+                <FrameLayout
+                    android:id="@+id/framenFour"
+                    android:layout_width="380dp"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/list_border"
+                    android:padding="30dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/nbox"
+                            android:padding="10dp"
+                            android:text="වැඩ ඇල්ලීම , ගණුදෙනු කිරීම හා ආහාර අනුභවය"
+                            android:textAlignment="center"
+                            android:textColor="@color/black"
+                            android:textSize="22dp"
+                            android:textStyle="bold" />
+
+
+                        <androidx.cardview.widget.CardView
+                            android:layout_width="160dp"
+                            android:layout_height="150dp"
+                            android:layout_gravity="center_horizontal"
+                            android:layout_marginTop="30dp"
+                            app:cardCornerRadius="25dp">
+
+                            <ImageView
+                                android:layout_width="250dp"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:src="@drawable/n4" />
+
+
+                        </androidx.cardview.widget.CardView>
+
+
+                        <androidx.cardview.widget.CardView
+                            android:id="@+id/txt4"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="30dp"
+                            android:layout_gravity="center_horizontal"
+                            android:backgroundTint="@color/white"
+                            android:padding="2dp"
+                            app:cardCornerRadius="25dp">
+
+                            <TextView
+                                android:id="@+id/nakathFour"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:background="@color/time_box"
+                                android:padding="10dp"
+                                android:textAlignment="center"
+                                android:textColor="@color/black"
+                                android:textSize="20dp"
+                                android:textStyle="bold" />
+
+                        </androidx.cardview.widget.CardView>
+
+
+                        <TextView
+
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="30dp"
+                            android:background="@drawable/nbox"
+                            android:padding="15dp"
+                            android:text="අප්‍රේල් මස 14 වැනි සඳුදා පූර්වභාග 06.44 ට මුතු හා ශ්වේත වර්ණ වස්ත්‍රාභරණයෙන් සැරසී දකුණු දිශාව බලා සියලු වැඩ අල්ලා ගනුදෙනු කොට ආහාර අනුභව කිරීම මැනවි."
+                            android:textAlignment="center"
+                            android:textColor="@color/black"
+                            android:textSize="16dp"
+                            android:textStyle="bold" />
+
+                    </LinearLayout>
+
+
+                </FrameLayout>
+
+
+                <FrameLayout
+                    android:id="@+id/framenFive"
+                    android:layout_width="380dp"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="0dp"
+                    android:background="@drawable/list_border"
+                    android:padding="30dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/nbox"
+                            android:padding="10dp"
+                            android:text="හිසතෙල් ගෑම"
+                            android:textAlignment="center"
+                            android:textColor="@color/black"
+                            android:textSize="22dp"
+                            android:textStyle="bold" />
+
+
+                        <androidx.cardview.widget.CardView
+                            android:layout_width="160dp"
+                            android:layout_height="160dp"
+                            android:layout_gravity="center_horizontal"
+                            android:layout_marginTop="30dp"
+                            android:backgroundTint="@color/white"
+                            app:cardCornerRadius="25dp">
+
+                            <ImageView
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_gravity="center"
+                                android:src="@drawable/n5" />
+
+
+                        </androidx.cardview.widget.CardView>
+
+                        <androidx.cardview.widget.CardView
+                            android:id="@+id/txt5"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="30dp"
+                            android:layout_gravity="center_horizontal"
+                            android:backgroundTint="@color/white"
+                            android:padding="2dp"
+                            app:cardCornerRadius="25dp">
+
+                            <TextView
+                                android:id="@+id/nakathFive"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:background="@color/time_box"
+                                android:padding="10dp"
+                                android:textAlignment="center"
+                                android:textColor="@color/black"
+                                android:textSize="20dp"
+                                android:textStyle="bold" />
+
+                        </androidx.cardview.widget.CardView>
+
+
+                        <TextView
+
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="30dp"
+                            android:background="@drawable/nbox"
+                            android:padding="15dp"
+                            android:text="අප්‍රේල් මස 16 වැනි බදාදා පූර්වභාග 09.04 ට පච්ච හෙවත් කොල පැහැති වස්ත්‍රාභරණයෙන් සැරසී උතුරු දිශාව බලා හිසට කොහොඹ පත් ද පයට කොළොන් පත් ද තබා කොහොඹ පත් යුෂ මිශ්‍ර නානු හා තෙල් ගා ස්නානය කිරීම මැනවි."
+                            android:textAlignment="center"
+                            android:textColor="@color/black"
+                            android:textSize="16dp"
+                            android:textStyle="bold" />
+                    </LinearLayout>
+
+                </FrameLayout>
+
+
+                <FrameLayout
+                    android:id="@+id/framenSix"
+                    android:layout_width="380dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="0dp"
+                    android:background="@drawable/list_border"
+                    android:padding="30dp"
+                    android:paddingBottom="0dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        tools:ignore="UselessParent">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="75dp"
+                            android:layout_gravity="center_horizontal"
+                            android:layout_marginTop="10dp"
+                            android:background="@drawable/nbox"
+                            android:padding="10dp"
+                            android:text="රැකී රක්ෂා සඳහා පිටත්ව යාම"
+                            android:textAlignment="center"
+                            android:textColor="@color/black"
+                            android:textSize="22dp"
+                            android:textStyle="bold" />
+
+
+                        <androidx.cardview.widget.CardView
+                            android:layout_width="160dp"
+                            android:layout_height="160dp"
+                            android:layout_gravity="center_horizontal"
+                            android:layout_marginTop="30dp"
+                            android:backgroundTint="@color/white"
+                            app:cardCornerRadius="25dp">
+
+                            <ImageView
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_gravity="center"
+                                android:src="@drawable/n6" />
+
+
+                        </androidx.cardview.widget.CardView>
+
+                        <androidx.cardview.widget.CardView
+                            android:id="@+id/txt6"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="30dp"
+                            android:layout_gravity="center_horizontal"
+                            android:backgroundTint="@color/white"
+                            android:padding="2dp"
+                            app:cardCornerRadius="25dp">
+
+                            <TextView
+                                android:id="@+id/nakathSix"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:background="@color/time_box"
+                                android:padding="10dp"
+                                android:textAlignment="center"
+                                android:textColor="@color/black"
+                                android:textSize="20dp"
+                                android:textStyle="bold" />
+
+
+                        </androidx.cardview.widget.CardView>
+
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="30dp"
+                            android:background="@drawable/nbox"
+                            android:padding="10dp"
+                            android:text="අප්‍රේල් මස 17 වැනි බ්‍රහස්පතින්දා පූර්වභාග 09.03 ට රන්වන් පැහැති වස්ත්‍රාභරණයෙන් සැරසී කිරිබතක් හා එළකිරි මිශ්‍ර කැවිලි වර්ගයක් අනුභව කර උතුරු දිශාව බලා පිටත්ව යෑම මැනවි."
+                            android:textAlignment="center"
+                            android:textColor="@color/black"
+                            android:textSize="16dp"
+                            android:textStyle="bold" />
+
+                    </LinearLayout>
+
+                </FrameLayout>
+            </LinearLayout>
+
+            <FrameLayout
+                android:id="@+id/compassBtn"
+                android:layout_width="350dp"
+                android:layout_height="70dp"
+                android:layout_gravity="center"
+                android:layout_marginTop="50dp"
+                android:background="@drawable/list_border"
+                tools:ignore="MissingConstraints">
+
+
+                <ImageView
+                    android:id="@+id/imageView"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginTop="15dp"
+                    app:srcCompat="@drawable/baseline_compass_calibration_24" />
+
+
+                <TextView
+                    android:id="@+id/textView8"
+                    android:layout_width="250dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:gravity="center"
+                    android:text="නිවැරදිව දිශාව සොයාගමු  Compass"
+                    android:textAlignment="center"
+                    android:textColor="@color/black"
+                    android:textSize="17dp"
+                    android:textStyle="italic" />
+
+
+            </FrameLayout>
+
+
+            <com.google.android.gms.ads.AdView
+                android:id="@+id/adView3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginBottom="20dp"
+                ads:adSize="BANNER"
+                ads:adUnitId="ca-app-pub-9783849108384584/9474894050"
+                tools:ignore="MissingConstraints" />
+
+            <TextView
+                android:id="@+id/textView6"
+                android:layout_width="150dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:fontFamily="@font/andika_new_basic"
+                android:text="From CHAMIX™"
+                android:textAlignment="center"
+                android:textColor="@color/black"
+                android:textStyle="bold|italic" />
+        </LinearLayout>
+    </ScrollView>
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
