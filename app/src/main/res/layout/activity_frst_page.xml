@@ -622,12 +622,11 @@
 
 
                 <ImageView
-                    android:id="@+id/imageView"
-                    android:layout_width="30dp"
-                    android:layout_height="30dp"
+                    android:id="@+id/compass"
+                    android:layout_width="35dp"
+                    android:layout_height="35dp"
                     android:layout_marginStart="10dp"
-                    android:layout_marginTop="15dp"
-                    app:srcCompat="@drawable/baseline_compass_calibration_24" />
+                    android:layout_marginTop="15dp"/>
 
 
                 <TextView

@@ -1,29 +1,20 @@
 package com.s22010120.timetest;
 
 import android.content.Intent;
-import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.os.CountDownTimer;
 import android.view.View;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.TextView;
-
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.graphics.Insets;
-import androidx.core.view.ViewCompat;
-import androidx.core.view.WindowInsetsCompat;
-
 import com.bumptech.glide.Glide;
 import com.google.android.gms.ads.AdRequest;
 import com.google.android.gms.ads.AdView;
 import com.google.android.gms.ads.MobileAds;
 import com.google.android.gms.ads.initialization.InitializationStatus;
 import com.google.android.gms.ads.initialization.OnInitializationCompleteListener;
-
-import org.w3c.dom.Text;
-
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.Locale;
@@ -138,13 +129,17 @@ public class FrstPageActivity extends AppCompatActivity {
         });
 
         ImageView gifsun = findViewById(R.id.rotatedSun);
+        ImageView gifcompass = findViewById(R.id.compass);
 
         Glide.with(this)
                 .asGif()
                 .load(R.drawable.rotatedsun)
                 .into(gifsun);
 
-
+        Glide.with(this)
+                .asGif()
+                .load(R.drawable.compassgif)
+                .into(gifcompass);
 
     }
 
