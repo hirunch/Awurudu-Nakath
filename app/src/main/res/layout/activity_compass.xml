@@ -42,6 +42,7 @@
         android:background="@drawable/border"
         android:gravity="center"
         android:text="මාලිමාව - Compass"
+        android:fontFamily="@font/nirmalaui"
         android:textAlignment="center"
         android:textColor="@color/black"
         android:textSize="24dp"
