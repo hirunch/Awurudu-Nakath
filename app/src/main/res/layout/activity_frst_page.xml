@@ -42,8 +42,8 @@
         android:fontFamily="@font/nirmalaui"
         android:textAlignment="center"
         android:textColor="@color/black"
-        android:textSize="20dp"
-        android:textStyle="bold|italic"
+        android:textSize="22dp"
+        android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.891"
@@ -622,12 +622,11 @@
 
 
                 <ImageView
-                    android:id="@+id/imageView"
-                    android:layout_width="30dp"
-                    android:layout_height="30dp"
+                    android:id="@+id/compass"
+                    android:layout_width="35dp"
+                    android:layout_height="35dp"
                     android:layout_marginStart="10dp"
-                    android:layout_marginTop="15dp"
-                    app:srcCompat="@drawable/baseline_compass_calibration_24" />
+                    android:layout_marginTop="15dp"/>
 
 
                 <TextView
