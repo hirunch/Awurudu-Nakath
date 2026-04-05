@@ -5,17 +5,20 @@
     android:id="@+id/main"
     xmlns:ads="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:background="@drawable/coverblr"
+    android:background="@drawable/bg_gradient"
     android:layout_height="match_parent"
     tools:context=".compassActivity">
 
-    <androidx.cardview.widget.CardView
+    <com.google.android.material.card.MaterialCardView
         android:id="@+id/cardView"
         android:layout_width="220dp"
         android:layout_height="220dp"
-        android:background="@color/white"
-        android:backgroundTint="@color/green1"
-        app:cardCornerRadius="35dp"
+        android:layout_margin="16dp"
+        app:cardBackgroundColor="#D9FFFFFF"
+        app:cardCornerRadius="36dp"
+        app:cardElevation="6dp"
+        app:strokeColor="@color/border_color"
+        app:strokeWidth="1dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.497"
@@ -30,8 +33,9 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_gravity="center"
+            android:contentDescription="@string/compass_image_desc"
             app:srcCompat="@drawable/compass" />
-    </androidx.cardview.widget.CardView>
+    </com.google.android.material.card.MaterialCardView>
 
 
     <TextView
@@ -41,11 +45,11 @@
         android:layout_marginTop="30dp"
         android:background="@drawable/border"
         android:gravity="center"
-        android:text="මාලිමාව - Compass"
+        android:text="@string/compass_title"
         android:fontFamily="@font/nirmalaui"
         android:textAlignment="center"
         android:textColor="@color/black"
-        android:textSize="24dp"
+        android:textSize="24sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -58,6 +62,7 @@
         android:id="@+id/imageView2"
         android:layout_width="40dp"
         android:layout_height="43dp"
+        android:contentDescription="@string/north_marker_desc"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
@@ -93,16 +98,20 @@
         app:layout_constraintVertical_bias="0.204"
         tools:ignore="MissingConstraints" />
 
-    <Button
+    <com.google.android.material.button.MaterialButton
         android:id="@+id/buttonads"
         android:layout_width="200dp"
         android:layout_height="60dp"
-        android:backgroundTint="@color/time_box"
-        android:onClick="adView"
-        android:text="Support Us"
+        android:layout_marginTop="12dp"
+        android:paddingStart="16dp"
+        android:paddingEnd="16dp"
+        android:text="@string/support_us"
         android:textAlignment="center"
         android:textColor="@color/black"
         android:textStyle="bold"
+        app:backgroundTint="@color/time_box"
+        app:cornerRadius="18dp"
+        app:iconPadding="8dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.497"

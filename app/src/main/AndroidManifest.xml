@@ -28,10 +28,6 @@
             android:exported="false" />
 
         <activity
-            android:name=".MainActivity"
-            android:exported="true"
-            android:theme="@style/Theme.AppCompat.NoActionBar"/>
-        <activity
             android:name=".StartUp"
             android:exported="true">
 
@@ -41,6 +37,10 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <receiver
+            android:name=".NakathNotificationReceiver"
+            android:exported="false" />
 
 
 

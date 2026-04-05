@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.os.CountDownTimer;
 import android.view.View;
 import android.widget.FrameLayout;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
 import androidx.activity.EdgeToEdge;
@@ -23,25 +24,23 @@ import java.util.concurrent.TimeUnit;
 public class FrstPageActivity extends AppCompatActivity {
 
     private TextView allNakathBtn;
-    private FrameLayout compassBtn, frameOne, frameTwo, frameThree, frameFour, frameFive, frameSix;
+    private View viewAllNakathBtn;
+    private ImageButton soundToggleButton;
+    private FrameLayout compassBtn;
+    private FrameLayout[] countdownFrames;
+    private TextView[] countdownViews;
+    private CountDownTimer activeCountDownTimer;
+    private int currentNakathIndex = -1;
 
-    private TextView timeCountdownOne, timeCountdownTwo, timeCountdownThree, timeCountdownFour, timeCountdownFive, timeCountdownSix;
-    private CountDownTimer countDownTimerOne, countDownTimerTwo, countDownTimerThree, countDownTimerFour, countDownTimerFive, countDownTimerSix;
-
-    private SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss", Locale.getDefault());
-
-    private String firstBoxnakathOne = "2025-04-13 20:57:00";
-    private String secondBoxnakathtwo = "2025-04-14 03:21:00";
-    private String thirdBoxnakathThree = "2025-04-14 04:04:00";
-    private String fourthBoxnakathFour = "2025-04-14 06:44:00";
-    private String fifthBoxnakathfive = "2025-04-16 09:04:00";
-    private String sixthBoxnakathsix = "2025-04-17 09:03:00";
+    private final SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss", Locale.getDefault());
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         EdgeToEdge.enable(this);
         setContentView(R.layout.activity_frst_page);
+
+        AudioController.startIfNeeded(this);
 
         MobileAds.initialize(this, new OnInitializationCompleteListener() {
             @Override
@@ -57,62 +56,43 @@ public class FrstPageActivity extends AppCompatActivity {
 
 
         allNakathBtn = findViewById(R.id.nakathView);
+        viewAllNakathBtn = findViewById(R.id.viewAllNakathBtn);
+        soundToggleButton = findViewById(R.id.soundToggleBtn);
         compassBtn = findViewById(R.id.compassBtn);
 
-        timeCountdownOne = findViewById(R.id.nakathOne);
-        timeCountdownTwo = findViewById(R.id.nakathTwo);
-        timeCountdownThree = findViewById(R.id.nakathThree);
-        timeCountdownFour = findViewById(R.id.nakathFour);
-        timeCountdownFive = findViewById(R.id.nakathFive);
-        timeCountdownSix = findViewById(R.id.nakathSix);
+        updateSoundIcon();
+        soundToggleButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                boolean nextMutedState = !AudioController.isMuted(FrstPageActivity.this);
+                AudioController.setMuted(FrstPageActivity.this, nextMutedState);
+                updateSoundIcon();
+            }
+        });
 
-        frameOne = findViewById(R.id.framenOne);
-        frameTwo = findViewById(R.id.framenTwo);
-        frameThree = findViewById(R.id.framenThree);
-        frameFour = findViewById(R.id.framenFour);
-        frameFive = findViewById(R.id.framenFive);
-        frameSix = findViewById(R.id.framenSix);
+        countdownViews = new TextView[]{
+                findViewById(R.id.nakathOne),
+                findViewById(R.id.nakathTwo),
+                findViewById(R.id.nakathThree),
+                findViewById(R.id.nakathFour),
+                findViewById(R.id.nakathFive),
+                findViewById(R.id.nakathSix)
+        };
 
-        try {
-            Date futureNakathDateOne = dateFormat.parse(firstBoxnakathOne);
-            long futureNakathMilllisOne = futureNakathDateOne.getTime();
-            Date futureNakathDateTwo = dateFormat.parse(secondBoxnakathtwo);
-            long futureNakathMilllisTwo = futureNakathDateTwo.getTime();
-            Date futureNakathDateThree = dateFormat.parse(thirdBoxnakathThree);
-            long futureNakathMilllisThree = futureNakathDateThree.getTime();
-            Date futureNakathDateFour = dateFormat.parse(fourthBoxnakathFour);
-            long futureNakathMilllisFour = futureNakathDateFour.getTime();
-            Date futureNakathDateFive = dateFormat.parse(fifthBoxnakathfive);
-            long futureNakathMilllisFive = futureNakathDateFive.getTime();
-            Date futureNakathDateSix = dateFormat.parse(sixthBoxnakathsix);
-            long futureNakathMilllisSix = futureNakathDateSix.getTime();
+        countdownFrames = new FrameLayout[]{
+                findViewById(R.id.framenOne),
+                findViewById(R.id.framenTwo),
+                findViewById(R.id.framenThree),
+                findViewById(R.id.framenFour),
+                findViewById(R.id.framenFive),
+                findViewById(R.id.framenSix)
+        };
 
-
-            long currentTimeMills = System.currentTimeMillis();
-
-            long timeDiffOne = futureNakathMilllisOne - currentTimeMills;
-            long timeDiffTwo = futureNakathMilllisTwo - currentTimeMills;
-            long timeDiffThree = futureNakathMilllisThree - currentTimeMills;
-            long timeDiffFour = futureNakathMilllisFour - currentTimeMills;
-            long timeDiffFive = futureNakathMilllisFive - currentTimeMills;
-            long timeDiffSix = futureNakathMilllisSix - currentTimeMills;
-
-
-            startCountdownOne(timeDiffOne);
-            startCountdownTwo(timeDiffTwo);
-            startCountdownThree(timeDiffThree);
-            startCountdownFour(timeDiffFour);
-            startCountdownFive(timeDiffFive);
-            startCountdownSix(timeDiffSix);
-
-
-        } catch (Exception e){
-            e.printStackTrace();
-        }
+        startFromLatestUpcomingNakath();
 
 
 
-        allNakathBtn.setOnClickListener(new View.OnClickListener() {
+        viewAllNakathBtn.setOnClickListener(new View.OnClickListener() {
            @Override
             public void onClick(View v) {
                 Intent intent = new Intent(FrstPageActivity.this, MainActivity2.class);
@@ -143,91 +123,118 @@ public class FrstPageActivity extends AppCompatActivity {
 
     }
 
-    private void startCountdownOne(long millsFuture){
-        countDownTimerOne = new CountDownTimer(millsFuture, 1000) {
+    @Override
+    protected void onStart() {
+        super.onStart();
+        AudioController.startIfNeeded(this);
+        updateSoundIcon();
+    }
+
+    @Override
+    protected void onStop() {
+        super.onStop();
+        // Stop music only when app is exiting from the root screen.
+        if (isFinishing() && isTaskRoot()) {
+            AudioController.release();
+        }
+    }
+
+    private void updateSoundIcon() {
+        if (soundToggleButton == null) {
+            return;
+        }
+        boolean muted = AudioController.isMuted(this);
+        soundToggleButton.setImageResource(
+                muted ? android.R.drawable.ic_lock_silent_mode : android.R.drawable.ic_lock_silent_mode_off
+        );
+    }
+
+    private void startFromLatestUpcomingNakath() {
+        int nextIndex = findNextUpcomingIndex(System.currentTimeMillis());
+        startCountdownForIndex(nextIndex);
+    }
+
+    private int findNextUpcomingIndex(long nowMillis) {
+        for (int i = 0; i < NakathSchedule.TIMES.length; i++) {
+            long eventTimeMillis = getNakathTimeMillis(i);
+            if (eventTimeMillis > nowMillis) {
+                return i;
+            }
+        }
+        return -1;
+    }
+
+    private long getNakathTimeMillis(int index) {
+        try {
+            Date date = dateFormat.parse(NakathSchedule.TIMES[index]);
+            if (date == null) {
+                return -1;
+            }
+            return date.getTime();
+        } catch (Exception e) {
+            return -1;
+        }
+    }
+
+    private void startCountdownForIndex(int index) {
+        if (activeCountDownTimer != null) {
+            activeCountDownTimer.cancel();
+            activeCountDownTimer = null;
+        }
+
+        if (index < 0 || index >= countdownFrames.length) {
+            currentNakathIndex = -1;
+            showOnlyIndex(-1);
+            updateUpcomingTitle(-1);
+            return;
+        }
+
+        long nowMillis = System.currentTimeMillis();
+        long targetTimeMillis = getNakathTimeMillis(index);
+
+        if (targetTimeMillis <= nowMillis) {
+            startCountdownForIndex(index + 1);
+            return;
+        }
+
+        currentNakathIndex = index;
+        showOnlyIndex(index);
+        updateUpcomingTitle(index);
+
+        activeCountDownTimer = new CountDownTimer(targetTimeMillis - nowMillis, 1000) {
             @Override
             public void onTick(long millisUntilFinished) {
-                String countdownText = getCountdownText(millisUntilFinished);
-                timeCountdownOne.setText(countdownText);
+                if (currentNakathIndex >= 0 && currentNakathIndex < countdownViews.length) {
+                    countdownViews[currentNakathIndex].setText(getCountdownText(millisUntilFinished));
+                }
             }
 
             @Override
             public void onFinish() {
-                frameOne.setVisibility(View.GONE);
+                int finishedIndex = currentNakathIndex;
+                if (finishedIndex >= 0 && finishedIndex < countdownFrames.length) {
+                    countdownFrames[finishedIndex].setVisibility(View.GONE);
+                }
+                startCountdownForIndex(finishedIndex + 1);
             }
         }.start();
     }
-    private void startCountdownTwo(long millsFuture){
-        countDownTimerTwo = new CountDownTimer(millsFuture, 1000) {
-            @Override
-            public void onTick(long millisUntilFinished) {
-                String countdownText = getCountdownText(millisUntilFinished);
-                timeCountdownTwo.setText(countdownText);
-            }
 
-            @Override
-            public void onFinish() {
-                frameTwo.setVisibility(View.GONE);
-            }
-        }.start();
-    }
-    private void startCountdownThree(long millsFuture){
-        countDownTimerThree = new CountDownTimer(millsFuture, 1000) {
-            @Override
-            public void onTick(long millisUntilFinished) {
-                String countdownText = getCountdownText(millisUntilFinished);
-                timeCountdownThree.setText(countdownText);
-            }
-
-            @Override
-            public void onFinish() {
-                frameThree.setVisibility(View.GONE);
-            }
-        }.start();
-    }
-    private void startCountdownFour(long millsFuture){
-        countDownTimerFour = new CountDownTimer(millsFuture, 1000) {
-            @Override
-            public void onTick(long millisUntilFinished) {
-                String countdownText = getCountdownText(millisUntilFinished);
-                timeCountdownFour.setText(countdownText);
-            }
-
-            @Override
-            public void onFinish() {
-                frameFour.setVisibility(View.GONE);
-            }
-        }.start();
+    private void showOnlyIndex(int visibleIndex) {
+        for (int i = 0; i < countdownFrames.length; i++) {
+            countdownFrames[i].setVisibility(i == visibleIndex ? View.VISIBLE : View.GONE);
+        }
     }
 
-    private void startCountdownFive(long millsFuture){
-        countDownTimerFive = new CountDownTimer(millsFuture, 1000) {
-            @Override
-            public void onTick(long millisUntilFinished) {
-                String countdownText = getCountdownText(millisUntilFinished);
-                timeCountdownFive.setText(countdownText);
-            }
-
-            @Override
-            public void onFinish() {
-                frameFive.setVisibility(View.GONE);
-            }
-        }.start();
-    }
-
-    private void startCountdownSix(long millsFuture){
-        countDownTimerSix = new CountDownTimer(millsFuture, 1000) {
-            @Override
-            public void onTick(long millisUntilFinished) {
-                String countdownText = getCountdownText(millisUntilFinished);
-                timeCountdownSix.setText(countdownText);
-            }
-
-            @Override
-            public void onFinish() {
-                frameSix.setVisibility(View.GONE);
-            }
-        }.start();
+    private void updateUpcomingTitle(int index) {
+        if (allNakathBtn == null) {
+            return;
+        }
+        if (index < 0 || index >= NakathSchedule.TITLES.length) {
+            allNakathBtn.setText("සියලු නැකත් අවසන් වී ඇත");
+            return;
+        }
+        allNakathBtn.setText("මීළඟ නැකත: " + NakathSchedule.TITLES[index]);
     }
 
     private String getCountdownText(long millisUntilFinished) {
@@ -250,23 +257,8 @@ public class FrstPageActivity extends AppCompatActivity {
     @Override
     protected void onDestroy(){
         super.onDestroy();
-        if(countDownTimerOne != null) {
-            countDownTimerOne.cancel();
-        }
-        if(countDownTimerTwo != null) {
-            countDownTimerTwo.cancel();
-        }
-        if(countDownTimerThree != null) {
-            countDownTimerThree.cancel();
-        }
-        if(countDownTimerFour != null) {
-            countDownTimerFour.cancel();
-        }
-        if(countDownTimerFive != null) {
-            countDownTimerFive.cancel();
-        }
-        if(countDownTimerSix != null) {
-            countDownTimerSix.cancel();
+        if(activeCountDownTimer != null) {
+            activeCountDownTimer.cancel();
         }
 
     }

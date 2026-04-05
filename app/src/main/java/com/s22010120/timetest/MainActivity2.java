@@ -1,9 +1,9 @@
 package com.s22010120.timetest;
 
-import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.os.CountDownTimer;
-import android.widget.FrameLayout;
+import android.view.View;
+import android.widget.ImageButton;
 import android.widget.TextView;
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
@@ -19,8 +19,7 @@ import java.util.concurrent.TimeUnit;
 
 public class MainActivity2 extends AppCompatActivity {
 
-    MediaPlayer mediaPlayer;
-
+    private ImageButton soundToggleButton;
     private TextView n2Countdown1;
     private TextView n2Countdown2;
     private TextView n2Countdown3;
@@ -38,19 +37,13 @@ public class MainActivity2 extends AppCompatActivity {
     private SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss", Locale.getDefault());
 
 
-    private String nakathOne = "2025-04-14 03:21:00";
-    private String nakathTwo = "2025-04-13 20:57:00";
-    private String nakathThree = "2025-04-14 04:04:00";
-    private String nakathFour = "2025-04-14 06:44:00";
-    private String nakathFive = "2025-04-16 09:04:00";
-    private String nakathSix = "2025-04-17 09:03:00";
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         EdgeToEdge.enable(this);
         setContentView(R.layout.activity_main2);
+        AudioController.startIfNeeded(this);
 
         MobileAds.initialize(this, new OnInitializationCompleteListener() {
             @Override
@@ -69,9 +62,16 @@ public class MainActivity2 extends AppCompatActivity {
                 .build();
         adView2.loadAd(adrequest2);
 
-        mediaPlayer = MediaPlayer.create(this, R.raw.song1);
-        mediaPlayer.setLooping(true);
-        mediaPlayer.start();
+        soundToggleButton = findViewById(R.id.soundToggleBtn);
+        updateSoundIcon();
+        soundToggleButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                boolean nextMutedState = !AudioController.isMuted(MainActivity2.this);
+                AudioController.setMuted(MainActivity2.this, nextMutedState);
+                updateSoundIcon();
+            }
+        });
 
 
         n2Countdown1 = findViewById(R.id.textn1);
@@ -82,17 +82,17 @@ public class MainActivity2 extends AppCompatActivity {
         n2Countdown6 = findViewById(R.id.textn6);
 
         try {
-            Date futureDateTime1 = dateFormat.parse(nakathOne);
+            Date futureDateTime1 = dateFormat.parse(NakathSchedule.NAKATH_ONE);
             long futureTimeInMillis1 = futureDateTime1.getTime();
-            Date futureDateTime2 = dateFormat.parse(nakathTwo);
+            Date futureDateTime2 = dateFormat.parse(NakathSchedule.NAKATH_TWO);
             long futureTimeInMillis2 = futureDateTime2.getTime();
-            Date futureDateTime3 = dateFormat.parse(nakathThree);
+            Date futureDateTime3 = dateFormat.parse(NakathSchedule.NAKATH_THREE);
             long futureTimeInMillis3 = futureDateTime3.getTime();
-            Date futureDateTime4 = dateFormat.parse(nakathFour);
+            Date futureDateTime4 = dateFormat.parse(NakathSchedule.NAKATH_FOUR);
             long futureTimeInMillis4 = futureDateTime4.getTime();
-            Date futureDateTime5 = dateFormat.parse(nakathFive);
+            Date futureDateTime5 = dateFormat.parse(NakathSchedule.NAKATH_FIVE);
             long futureTimeInMillis5 = futureDateTime5.getTime();
-            Date futureDateTime6 = dateFormat.parse(nakathSix);
+            Date futureDateTime6 = dateFormat.parse(NakathSchedule.NAKATH_SIX);
             long futureTimeInMillis6 = futureDateTime6.getTime();
 
             long currentTimeInMillis = System.currentTimeMillis();
@@ -116,7 +116,32 @@ public class MainActivity2 extends AppCompatActivity {
         }
     }
 
-    private void startCountdown1(long millisInFuture) {
+    @Override
+    protected void onStart() {
+        super.onStart();
+        AudioController.startIfNeeded(this);
+        updateSoundIcon();
+    }
+
+    @Override
+    protected void onStop() {
+        super.onStop();
+        if (isFinishing() && isTaskRoot()) {
+            AudioController.release();
+        }
+    }
+
+    private void updateSoundIcon() {
+        if (soundToggleButton == null) {
+            return;
+        }
+        boolean muted = AudioController.isMuted(this);
+        soundToggleButton.setImageResource(
+                muted ? android.R.drawable.ic_lock_silent_mode : android.R.drawable.ic_lock_silent_mode_off
+        );
+    }
+
+    private void startCountdown2(long millisInFuture) {
         countDownTimer1 = new CountDownTimer(millisInFuture, 1000) {
             @Override
             public void onTick(long millisUntilFinished) {
@@ -133,7 +158,7 @@ public class MainActivity2 extends AppCompatActivity {
         }.start();
     }
 
-    private void startCountdown2(long millisInFuture) {
+    private void startCountdown1(long millisInFuture) {
         countDownTimer2 = new CountDownTimer(millisInFuture, 1000) {
             @Override
             public void onTick(long millisUntilFinished) {
@@ -257,13 +282,5 @@ public class MainActivity2 extends AppCompatActivity {
         }
     }
 
-    @Override
-    protected void onStop() {
-        super.onStop();
-        if (mediaPlayer != null && mediaPlayer.isPlaying()) {
-            mediaPlayer.stop();
-            mediaPlayer.release();
-        }
-    }
 
 }
